@@ -160,11 +160,11 @@
         </div>
 
         <div class="status" id="statusIcon">✓</div>
-        <div class="status-text" id="statusText">сохранено</div>
+        
 
         <div id="pasteArea" contenteditable="true"></div>
     </div>
-    <div class="footer-text" id="footerText">вставьте изображение</div>
+    
 </div>
 
 <script>
@@ -188,21 +188,14 @@
         }
 
         function showSuccess() {
-            // Скрываем основной контент
+            
             contentWrapper.classList.add('hidden');
             footerText.classList.add('hidden');
-
-            // Показываем статус с анимацией
             statusIcon.classList.remove('hide', 'show');
             statusText.classList.remove('hide', 'show');
-
-            // Небольшая задержка для сброса анимации
             void statusIcon.offsetWidth;
-
             statusIcon.classList.add('show');
             statusText.classList.add('show');
-
-            // Автоматически скрываем через 1.5 секунды
             if (timeoutId) clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
                 hideSuccess();
